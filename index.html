@@ -2,6 +2,7 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 
 <body>
@@ -9,7 +10,7 @@
     <div id="dynamicCard" class="flex-row align-center just-center">
         <?xml version="1.0" encoding="UTF-8" standalone="no"?>
         <!-- Created with Inkscape (http://www.inkscape.org/) -->
-        <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="100% " viewBox="0 0 87.757001 55.194204" version="1.1" id="svg8" inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)" sodipodi:docname="digitalcard.svg">
+        <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" viewBox="0 0 87.757001 55.194204" version="1.1" id="svg8" inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)" sodipodi:docname="digitalcard.svg">
             <defs id="defs2" />
             <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="0.35" inkscape:cx="-40" inkscape:cy="102.85714" inkscape:document-units="mm" inkscape:current-layer="layer1" showgrid="false" units="in" inkscape:window-width="1366" inkscape:window-height="704" inkscape:window-x="0" inkscape:window-y="27" inkscape:window-maximized="1" />
             <metadata id="metadata5">
@@ -26,6 +27,14 @@
                 <path style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.33333337" d="M 163.66992 67.117188 L 131.45703 83.996094 L 99.238281 100.87695 L 99.607422 101.9668 L 99.978516 103.05859 L 109.38477 108.68945 L 118.79102 114.33008 L 119.99023 114.37695 L 121.18164 114.42773 L 130.8418 108.92773 L 140.50977 103.43359 L 152.55664 97.242188 L 164.60352 91.042969 L 187.93164 102.68945 L 211.25391 114.33984 L 221.84766 108.58398 L 232.4375 102.83008 L 232.4375 100.8457 L 198.05664 83.980469 L 163.66992 67.117188 z M 164.25391 94.427734 L 153.10352 100.35742 L 141.95703 106.2832 L 133.64453 110.71094 L 125.33594 115.13867 L 125.30664 117.0332 L 132.18164 121.33008 L 139.06055 125.62695 L 142.55078 125.82422 L 149.49414 121.89258 L 156.43164 117.96094 L 160.4668 115.92383 L 164.49805 113.89258 L 177.36328 120.0957 L 190.23242 126.30469 L 198.30664 121.48633 L 206.37891 116.67383 L 206.37891 115.0957 L 164.25391 94.427734 z M 164.75 116.93945 L 145.57227 127.49219 L 145.57227 129.41406 L 155.34766 135.42383 L 165.11914 141.43945 L 166.26562 141.49219 L 176.18555 135.4668 L 186.11328 129.43945 L 186.08203 127.96094 L 164.75 116.93945 z " transform="matrix(0.26458333,0,0,0.26458333,0,241.80579)" id="logo_color" />
             </g>
         </svg></div>
+    <div id="colorSelection" class="flex-row just-around align-center">
+        <button onclick="setCardColor('#000','#fff')" class="black selected"></button>
+        <button onclick="setCardColor('#942321','#6e1817')" class="red"></button>
+        <button onclick="setCardColor('#f9a4cf','#f565af')" class="pink" primary="" secondary=""></button>
+        <button onclick="setCardColor('#fff','#e0e0e0')" class="white" primary="#fff" secondary=""></button>
+        <button onclick="setCardColor('#315c80','#203d55')" class="blue"></button>
+        <button onclick="setCardColor('#158e5e','#075939')" class="green"></button>
+    </div>
     <div class="flex-row carousel">
         <div class="full-thumbnail"><img src="assets/nfccard-feature1.svg" alt=""></div>
         <div class="full-thumbnail"><img src="assets/nfccard-feature2.svg" alt=""></div>
