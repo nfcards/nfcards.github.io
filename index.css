@@ -3,12 +3,79 @@ body {
     height: 100vh;
 }
 
+.whole-flex {
+    flex: 1;
+}
 .flex-row {
     display: flex;
     flex-flow: row nowrap;
     /* height: 50vh; */
 }
 
+.flex-col {
+    display: flex;
+    flex-flow: column nowrap;
+}
+.flex-1-2 {
+    flex:1.2;
+}
+.just-start{
+    justify-content: flex-start;
+}
+.prioritize-height{
+    height:100%;
+    width:auto;
+}
+.prioritize-width{
+    width:100%;
+    height:auto;
+}
+
+.gallery {
+    background: white;
+
+}
+.gallery .vector >img {
+    max-width: 400px;
+}
+.margin-2-left { 
+    margin-left:2rem;
+}
+.gallery .displayText h1 {
+    color: #00485a;
+    font-weight: 100;
+    margin:0.12rem 0;
+
+}
+.gallery .displayText .order-container{
+    padding:1rem 0;
+}
+.order-container button {
+    padding:0.5rem 1rem;
+
+
+
+}
+div:has(h3.subtitle)::after {
+    margin-bottom:5em;
+}
+
+#customization {
+    background-color: white;
+    
+}
+h3.subtitle {
+    font-weight: 500;
+    font-size:1.4em;
+    text-indent: 8px;
+
+    min-height:5vh;
+}
+button.illuminate {
+    background-color:#e0e0e0;
+    border-radius:0.5rem;
+    border:none !important;
+}
 .carousel>.full-thumbnail:not(:first-child) {
     margin-left: 3rem;
 }
@@ -16,9 +83,12 @@ body {
 .full-thumbnail {
     height: 100%;
     border-radius: 2rem;
+    background:White;
+    
+}
+.full-thumbnail:not(.no-color)  {
     background: linear-gradient(to top right, #09667c, #3d5965), linear-gradient(to bottom right, #09667c, #3d5965);
 }
-
 .full-thumbnail>img {
     height: 100%;
 }
@@ -40,6 +110,9 @@ body {
 
 .align-center {
     align-items: center;
+}
+.align-end {
+    align-items: flex-end;
 }
 
 div#dynamicCard {
@@ -83,7 +156,7 @@ div#dynamicCard {
     background-color: #315c80;
 }
 
-#colorSelection button.green {
+ button.green {
     background-color: #158e5e;
 }
 
@@ -93,6 +166,19 @@ div#dynamicCard {
 
 #colorSelection button.white {
     background-color: white;
+}
+input[type="text"] {
+    padding: 1em;
+    flex: 0.8;
+    border-radius:1rem;
+    border:1px solid lightgrey;
+}
+.checkout-btn {
+    width:100%;
+    padding:1rem;
+    text-align: center;
+    font-size:large;
+    margin: 1rem 0;
 }
 
 @media (min-width : 440px) {
@@ -113,5 +199,16 @@ div#dynamicCard {
     #dynamicCard svg {
         height: auto;
         width: 440px;
+    }
+}
+@media (min-width : 960px) {
+    .gallery .displayText h1 {
+        font-size: 5em;
+        margin: 0.12rem 0;
+        font-weight: 100;
+    }
+
+    #welcome >div {
+        align-items:center;
     }
 }
