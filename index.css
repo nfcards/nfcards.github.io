@@ -140,8 +140,8 @@ div#dynamicCard {
 }
 
 #colorSelection button.selected {
-
-    box-shadow: inset 0px 0px 0px 5px white;
+    border:2px solid grey;
+    box-shadow: inset 0px 0px 0px 5px lightgrey;
 
 }
 
