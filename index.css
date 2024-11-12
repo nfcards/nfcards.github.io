@@ -114,10 +114,11 @@ button.illuminate {
 .align-end {
     align-items: flex-end;
 }
-
 div#dynamicCard {
     height: 23vh;
+    margin-top: 2rem;
     width: 100%;
+    padding: 2rem 0;
 }
 
 #dynamicCard svg {
