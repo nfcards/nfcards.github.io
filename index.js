@@ -41,10 +41,11 @@ function grabUrl(token) {
 }
 //console.log(grabUrl(token));
 //	console.log(isToken(token));
-//	(isToken(token) && window.location.replace(grabUrl(token)));
+//	;
 
-
+//Data from file
 function handleRoutes(routes) {
+	(routes.hasOwnProperty(grabToken()) && routes[grabToken()]['site'] && window.location.replace(grabUrl(token)))
 	console.log(routes);
 }
 window.addEventListener("load", () => {
