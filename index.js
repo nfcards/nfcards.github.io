@@ -51,11 +51,12 @@ function grabToken() {
 function grabUrl(token) {
 	return isToken(token) ? routes[token]["site"] : false;
 }
-function handleRoutes() {
+
+document.addEventListener("DOMContentLoaded", () => {
 	let token = grabToken();
 	fetchRoutes();
 	(isToken(token) && window.location.replace(grabUrl(token)));
-	
-}
+});
 
-handleRoutes();
+	
+	
