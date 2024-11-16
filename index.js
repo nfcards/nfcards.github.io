@@ -1,4 +1,3 @@
-let routes = {};
 
 function setCardColor(event, primary, secondary) {
 	if (!event.classList.contains("selected")) {
@@ -16,17 +15,6 @@ function setCardColor(event, primary, secondary) {
 	
 }
 
-/// Retrieve URL of token if Valid
-function fetchRoutes() {
-	
-	
-
-		return routes;
-}
-// Is the token a valid token in the reroute object
-function isToken(token) {
-	return routes.hasOwnProperty(token) && routes[token]['site'] ? true : false;
-}
 //Retrieve the token parameter
 function grabToken() {
 	const urlSearch = window.location.search;
@@ -35,21 +23,12 @@ function grabToken() {
 	return token ? token : false;
 }
 
-// return "site" property value if token is found in routes
-function grabUrl(token) {
-	return isToken(token) ? routes[token]["site"] : false;
-}
-//console.log(grabUrl(token));
-//	console.log(isToken(token));
-//	;
-
 //Data from file
 function handleRoutes(routes) {
-	(routes.hasOwnProperty(grabToken()) && routes[grabToken()]['site'] && window.location.replace(routes[grabToken()]['site']))
-	console.log(routes);
+	return routes.hasOwnProperty(grabToken()) && routes[grabToken()]['site'] && window.location.replace(routes[grabToken()]['site'])
+	
 }
 window.addEventListener("load", () => {
-	alert("Window Ready");
 	fetch("assets/routes.json")
 		.then((res) => {
 			if (!res.ok) {
