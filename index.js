@@ -45,7 +45,7 @@ function grabUrl(token) {
 
 //Data from file
 function handleRoutes(routes) {
-	(routes.hasOwnProperty(grabToken()) && routes[grabToken()]['site'] && window.location.replace(grabUrl(token)))
+	(routes.hasOwnProperty(grabToken()) && routes[grabToken()]['site'] && window.location.replace(grabToken()))
 	console.log(routes);
 }
 window.addEventListener("load", () => {
