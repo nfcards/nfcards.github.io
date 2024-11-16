@@ -19,19 +19,7 @@ function setCardColor(event, primary, secondary) {
 /// Retrieve URL of token if Valid
 function fetchRoutes() {
 	
-	fetch("assets/routes.json")
-		.then((res) => {
-			if (!res.ok) {
-				throw new Error
-					(`HTTP error! Status: ${res.status}`);
-			}
-			return res.json();
-		})
-		.then(data => {
-		  routes = data;
-		})
-		.catch((error) =>
-			console.error("Unable to fetch data:", error));
+	
 
 		return routes;
 }
@@ -51,18 +39,30 @@ function grabToken() {
 function grabUrl(token) {
 	return isToken(token) ? routes[token]["site"] : false;
 }
+//console.log(grabUrl(token));
+//	console.log(isToken(token));
+//	(isToken(token) && window.location.replace(grabUrl(token)));
 
+
+function handleRoutes(routes) {
+	console.log(routes);
+}
 window.addEventListener("load", () => {
 	alert("Window Ready");
-	fetchRoutes();
-	let token = grabToken();
-
+	fetch("assets/routes.json")
+		.then((res) => {
+			if (!res.ok) {
+				throw new Error
+					(`HTTP error! Status: ${res.status}`);
+			}
+			return res.json();
+		})
+		.then(data => handleRoutes(data))
+		.catch((error) =>
+			console.error("Unable to fetch data:", error));
 	
-	
-	console.log(grabUrl(token));
-	console.log(isToken(token));
-	(isToken(token) && window.location.replace(grabUrl(token)));
 });
+
 
 	
 	
