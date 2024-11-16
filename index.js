@@ -53,8 +53,13 @@ function grabUrl(token) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+	alert("Dom Ready");
 	let token = grabToken();
+
+	
 	fetchRoutes();
+	console.log(grabUrl(token));
+	console.log(isToken(token));
 	(isToken(token) && window.location.replace(grabUrl(token)));
 });
 
