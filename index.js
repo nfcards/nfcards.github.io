@@ -52,8 +52,8 @@ function grabUrl(token) {
 	return isToken(token) ? routes[token]["site"] : false;
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-	alert("Dom Ready");
+Window.addEventListener("load", () => {
+	alert("Window Ready");
 	fetchRoutes();
 	let token = grabToken();
 
