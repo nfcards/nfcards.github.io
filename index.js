@@ -52,7 +52,7 @@ function grabUrl(token) {
 	return isToken(token) ? routes[token]["site"] : false;
 }
 
-Window.addEventListener("load", () => {
+window.addEventListener("load", () => {
 	alert("Window Ready");
 	fetchRoutes();
 	let token = grabToken();
