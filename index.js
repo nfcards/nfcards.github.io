@@ -10,10 +10,8 @@ function setCardColor(event, primary, secondary) {
 		document.querySelector("button.selected").classList.remove("selected");
 		event.classList.add("selected"); 
 	}
-
-	
-	
 }
+
 
 
 

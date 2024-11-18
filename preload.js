@@ -8,19 +8,19 @@ function grabToken() {
 
 //Handle routing based on token parameter
 function handleRoutes(routes) {
+	console.log(grabToken() ? grabToken() : "No token Found");
 	return routes.hasOwnProperty(grabToken()) && routes[grabToken()]['site'] && window.location.replace(routes[grabToken()]['site'])
 	
 }
 
-
-	fetch("assets/routes.json")
-		.then((res) => {
-			if (!res.ok) {
-				throw new Error
-					(`HTTP error! Status: ${res.status}`);
-			}
-			return res.json();
-		})
-		.then(data => handleRoutes(data))
-		.catch((error) =>
-			console.error("Unable to fetch data:", error));
+fetch("assets/routes.json")
+	.then((res) => {
+		if (!res.ok) {
+			throw new Error
+				(`HTTP error! Status: ${res.status}`);
+		}
+		return res.json();
+	})
+	.then(data => handleRoutes(data))
+	.catch((error) =>
+		console.error("Unable to fetch data:", error));
