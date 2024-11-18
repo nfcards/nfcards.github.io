@@ -186,28 +186,29 @@ div#loading {
     background: #060c24;
 }
 
-.overlay {
+.popup {
     width: 100vw;
     height: 100vh;
-    position: absolute;
+    position: fixed ;
     top:0;
+    left:0;
     
     z-index: 3;
 }
-path[id^="rung"] {
+#loading path[id^="rung"] {
     fill: black;  
     
 }
 
     
-     path[id='rung1'] {
+#loading path[id='rung1'] {
     animation-duration:1s;
     animation-name:toWhite;
     animation-timing-function:linear;
     animation-direction:alternate;
     animation-iteration-count:infinite; 
 }
-path[id='rung2'] {
+#loading path[id='rung2'] {
     animation-duration:1s;
     animation-name:toWhite;
     animation-timing-function:linear;
@@ -215,7 +216,7 @@ path[id='rung2'] {
     animation-iteration-count:infinite;
     animation-delay:0.23s
 }
-path[id='rung3'] {
+#loading path[id='rung3'] {
     animation-duration:1s;
     animation-name:toWhite;
     animation-timing-function:linear;

@@ -1,3 +1,6 @@
+let isValidToken = false;
+
+
 //Retrieve the token parameter
 function grabToken() {
 	const urlSearch = window.location.search;
@@ -6,11 +9,11 @@ function grabToken() {
 	return token ? token : false;
 }
 
+
 //Handle routing based on token parameter
 function handleRoutes(routes) {
-	console.log(grabToken() ? grabToken() : "No token Found");
-	return routes.hasOwnProperty(grabToken()) && routes[grabToken()]['site'] && window.location.replace(routes[grabToken()]['site'])
-	
+	isValidToken = routes[grabToken()];
+	return isValidToken && routes[grabToken()]['site'] && window.location.replace(routes[grabToken()]['site']);
 }
 
 fetch("assets/routes.json")
