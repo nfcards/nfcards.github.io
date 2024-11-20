@@ -166,27 +166,27 @@ div#dynamicCard {
 
 }
 
-#colorSelection button[name="black"] {
+#colorSelection button[name="Maroon"] {
     background-color: #942321;
 }
 
-#colorSelection button[name="pink"] {
+#colorSelection button[name="Pink"] {
     background-color: #f9a4cf;
 }
 
-#colorSelection button[name="blue"] {
+#colorSelection button[name="Blue"] {
     background-color: #315c80;
 }
 
-button[name="green"] {
+button[name="Emerald"] {
     background-color: #158e5e;
 }
 
-#colorSelection button[name="black"] {
+#colorSelection button[name="Black"] {
     background-color: black;
 }
 
-#colorSelection button[name="white"] {
+#colorSelection button[name="White"] {
     background-color: white;
 }
 input[type="text"] {
