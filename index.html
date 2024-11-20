@@ -134,12 +134,12 @@
                 </svg>
         </div> 
         <div id="colorSelection" class="flex-row just-around align-center">
-            <button onclick="setCardColor(this, '#000','#fff')" class="black selected"></button>
-            <button onclick="setCardColor(this, '#942321','#6e1817')" class="red"></button>
-            <button onclick="setCardColor(this, '#f9a4cf','#f565af')" class="pink" primary="" secondary=""></button>
-            <button onclick="setCardColor(this, '#fff','#e0e0e0')" class="white" primary="#fff" secondary=""></button>
-            <button onclick="setCardColor(this, '#315c80','#203d55')" class="blue"></button>
-            <button onclick="setCardColor(this, '#158e5e','#075939')" class="green"></button>
+            <button onclick="setCardColor(this, '#000','#fff')" class="selected" name="black"></button>
+            <button onclick="setCardColor(this, '#942321','#6e1817')" name="red"></button>
+            <button onclick="setCardColor(this, '#f9a4cf','#f565af')" name="pink" ></button>
+            <button onclick="setCardColor(this, '#fff','#e0e0e0')" name="white" primary="#fff" secondary=""></button>
+            <button onclick="setCardColor(this, '#315c80','#203d55')" name="blue"></button>
+            <button onclick="setCardColor(this, '#158e5e','#075939')" name="green"></button>
         </div>
     </div>
     
@@ -149,7 +149,7 @@
         <div class="full-thumbnail no-color">
             <img src="assets/nfccard-customization1.svg"  class="prioritize-width" alt="Nearfield Digital Cards Allows You To Choose What Website Opens When You Digital Card is Tapped"/>
             <div id="urlSelection" class="flex-row just-center">
-            <input type="text" onkeyup="handleUrl()" placeholder="Enter A Web Address">
+            <input type="text" onkeyup="handleUrl(this.value)" placeholder="Enter A Web Address">
         </div>
         </div>
         <div class="full-thumbnail no-color">
@@ -167,7 +167,7 @@
         </div>
     </div>
     <div class="fixed-pad"">
-        <button class="illuminate checkout-btn ">Order Your Card</button>
+        <button id="orderBtn" onclick="orderCard()" class="dull checkout-btn ">Order Your Card</button>
     </div>
     <script type="text/javascript" src="index.js"></script>
 </body>

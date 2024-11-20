@@ -1,3 +1,7 @@
+let chosenColor = "black";
+const baseUrl = "https://form.jotform.com/243241951326150";
+let chosenUrl = "";
+
 console.log(isValidToken);
 if(isValidToken) {
 		// Valid card ID will disable scroll on device
@@ -18,10 +22,36 @@ function setCardColor(event, primary, secondary) {
 		
 		document.querySelector("button.selected").classList.remove("selected");
 		event.classList.add("selected"); 
+		chosenColor = event.name;
 	}
 }
+function orderCard () { 
+	let fullUrl = baseUrl + "?whatColor=" + chosenColor + "&linkedWebsite=" + encodeURIComponent(chosenUrl);
+	return chosenUrl && (window.location.href = fullUrl) ;
+	
+}
+function activateOrder () {
+	document.querySelector("#orderBtn").classList.remove("dull");
+	document.querySelector("#orderBtn").classList.add("illumated");
+	
 
-
+}
+function deactivateOrder () {
+	document.querySelector("#orderBtn").classList.remove("illumated");
+	document.querySelector("#orderBtn").classList.add("dull");
+}
+function isUrl(url) {
+	return (url.length > 5) ? true : false 
+}
+function handleUrl(url) {
+	if (isUrl(url)) {
+		activateOrder();
+		chosenUrl = url;
+	}
+	else {
+		deactivateOrder();
+	}
+}
 
 
 	

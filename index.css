@@ -88,10 +88,14 @@ h3.subtitle {
 
     min-height:5vh;
 }
-button.illuminate {
+button.dull {
     background-color:#e0e0e0;
     border-radius:0.5rem;
     border:none !important;
+}
+button.illuminated {
+    background-color: #065c71;
+    color:White
 }
 .carousel>.full-thumbnail:not(:first-child) {
     margin-left: 3rem;
@@ -162,27 +166,27 @@ div#dynamicCard {
 
 }
 
-#colorSelection button.red {
+#colorSelection button[name="black"] {
     background-color: #942321;
 }
 
-#colorSelection button.pink {
+#colorSelection button[name="pink"] {
     background-color: #f9a4cf;
 }
 
-#colorSelection button.blue {
+#colorSelection button[name="blue"] {
     background-color: #315c80;
 }
 
- button.green {
+button[name="green"] {
     background-color: #158e5e;
 }
 
-#colorSelection button.black {
+#colorSelection button[name="black"] {
     background-color: black;
 }
 
-#colorSelection button.white {
+#colorSelection button[name="white"] {
     background-color: white;
 }
 input[type="text"] {
