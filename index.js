@@ -32,12 +32,12 @@ function orderCard () {
 }
 function activateOrder () {
 	document.querySelector("#orderBtn").classList.remove("dull");
-	document.querySelector("#orderBtn").classList.add("illumated");
+	document.querySelector("#orderBtn").classList.add("illuminated");
 	
 
 }
 function deactivateOrder () {
-	document.querySelector("#orderBtn").classList.remove("illumated");
+	document.querySelector("#orderBtn").classList.remove("illuminated");
 	document.querySelector("#orderBtn").classList.add("dull");
 }
 function isUrl(url) {
