@@ -14,6 +14,7 @@ function grabToken() {
 function handleRoutes(routes) {
 	isValidToken = routes[grabToken()];
 	return isValidToken && routes[grabToken()]['site'] && window.location.replace(routes[grabToken()]['site']);
+	
 }
 
 fetch("assets/routes.json")

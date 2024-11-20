@@ -240,6 +240,37 @@ to {
 fill:white}
 
 }
+div#welcome {
+    box-shadow: -1px 7px 12px 0px hsl(0 0% 85% / 1);
+}
+
+img.prioritize-width {
+    margin-top: 1rem;
+}
+
+div#colorSelection {
+    background-color: hsl(0 0% 88% / 1) !important;
+
+}
+
+svg#svg8 {
+    height: 90% !important;
+}
+
+.fixed-pad {
+    padding: 0 1rem;
+}
+
+.carousel .full-thumbnail:nth-child(3) {
+    background: linear-gradient(to bottom right, #09667c, #102129);
+}
+
+.carousel .full-thumbnail:nth-child(2) {
+    background: linear-gradient(to bottom right, #a6e0ee, #215e78);
+}
+.carousel .full-thumbnail:nth-child(1) {
+    background: linear-gradient(to bottom right, hsl(191deg 18% 62.52%), #4e8299);
+}
 @media (min-width : 440px) {
     .full-thumbnail {
         flex: 1;
