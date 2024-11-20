@@ -32,7 +32,15 @@ body {
     width:100%;
     height:auto;
 }
+img.nav-logo {
+    min-width: 220px;
+    max-width: 300px;
+    width: 15rem;
+}
 
+div#navigation {
+    background: white;
+}
 .gallery {
     background: white;
 
