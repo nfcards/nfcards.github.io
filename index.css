@@ -4,7 +4,11 @@ body {
     margin:0;
     padding:0;
 }
-
+.anta-regular {
+    font-family: "Anta", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
 .whole-flex {
     flex: 1;
 }
@@ -249,7 +253,7 @@ fill:white}
 
 }
 div#welcome {
-    box-shadow: -1px 7px 12px 0px hsl(0 0% 85% / 1);
+    box-shadow: 0px 14px 18px 0px hsl(0deg 0% 88.31%);
 }
 
 img.prioritize-width {
