@@ -68,22 +68,18 @@ div#navigation {
     padding:1rem 0;
 }
 .order-container button {
-    padding:0.5rem 1rem;
-
-
-
+    padding:0.7rem 1.2rem;
+    background-color: #e4eced;
+    border:none;
+    border-radius: 1rem;
 }
 div:has(h3.subtitle)::after {
     margin-bottom:5em;
 }
 
-#customization {
-    background-color: white;
-    
-}
 h3.subtitle {
     font-weight: 500;
-    font-size:1.4em;
+    font-size:1.6em;
     text-indent: 8px;
 
     min-height:5vh;
@@ -104,7 +100,7 @@ button.illuminated {
 .full-thumbnail {
     height: 100%;
     border-radius: 2rem;
-    background:White;
+    background:transparent;
     
 }
 .full-thumbnail:not(.no-color)  {
@@ -148,18 +144,19 @@ div#dynamicCard {
 
 #colorSelection {
     border-radius: 5rem;
-    background-color: lightgrey;
-    margin: 2rem 0;
+    background-color: #ebebeb;
+    margin: 1rem 0 2rem 0;
     padding: 1rem;
-}
+    width: fit-content;
+} 
 
 #colorSelection button {
-    width: 3rem;
-    height: 3rem;
+    margin: 0 0.4rem;
+    width: 2rem;
+    height: 2rem;
     border-radius: 50%;
     border: none;
-}
-
+} 
 #colorSelection button.selected {
     border:2px solid grey;
     box-shadow: inset 0px 0px 0px 5px lightgrey;
@@ -191,7 +188,7 @@ button[name="Emerald"] {
 }
 input[type="text"] {
     padding: 1em;
-    flex: 0.8;
+    flex: 0.90;
     border-radius:1rem;
     border:1px solid lightgrey;
 }
@@ -265,11 +262,6 @@ div#welcome {
 
 img.prioritize-width {
     margin-top: 1rem;
-}
-
-div#colorSelection {
-    background-color: hsl(0 0% 88% / 1) !important;
-
 }
 
 svg#svg8 {
