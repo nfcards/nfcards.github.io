@@ -29,14 +29,14 @@
      inkscape:window-height="704"
      id="namedview21394"
      showgrid="false"
-     inkscape:zoom="0.35355339"
-     inkscape:cx="-110.66423"
-     inkscape:cy="57.550408"
+     inkscape:zoom="0.25"
+     inkscape:cx="-430.89004"
+     inkscape:cy="346.83342"
      inkscape:window-x="0"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg8"
-     showguides="false"
+     showguides="true"
      units="mm" />
   <defs
      id="defs2">
@@ -487,15 +487,6 @@
       </cc:Work>
     </rdf:RDF>
   </metadata>
-  <rect
-     style="opacity:1;fill:#fdfdfd;fill-opacity:0.96226418;stroke:none;stroke-width:0.53429073;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:39.22031021;stroke-opacity:1;enable-background:new"
-     id="rect11754-7-2"
-     width="198.314"
-     height="234.14041"
-     x="0.0046022008"
-     y="-7.1108017"
-     rx="12"
-     ry="12" />
   <path
      inkscape:connector-curvature="0"
      id="path25996"
