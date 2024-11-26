@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+	.grid{
+		display:flex;
+		flex-flow:row wrap;
+	}
+	.qr {
+		padding:1rem;
+	}
+	.qr img {
+		width:6em;
+		height:6m;
+	}
+</style>
+</head>
+<body>
+	<input type="number" id="qty"><button onclick="generatesQrs()">Generate QRs
+	</button>
+<div class="grid"> 
+</div>
+<script type="text/javascript" src="QRCodeJs/qrcode.min.js"></script>
+<script type="text/javascript">
+let tokens = [];
+let grid = document.querySelector(".grid");
+function generatesQrs() {
+	for (var i = 0; i < document.querySelector("#qty").value; i++) {  
+		let newQr = document.createElement("div");
+		let label = document.createElement("h5");
+		let frozenToken = generateToken();
+		//Create a scannable qr 
+		label.innerHTML = frozenToken;
+		newQr.classList.add("qr");
+		new QRCode(newQr, `https://nfcards.github.io/index.html?token=${frozenToken}`);
+		newQr.appendChild(label);
+		grid.appendChild(newQr);
+
+
+		
+	}
+}
+function isToken(token){
+	return tokens.hasOwnProperty(token);
+}
+function generateToken() {
+	const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_';
+	let output = '';
+	let i = 0;
+	//stop when output is not a token or output is empty
+	while (output=='' || isToken(output)) {
+		for (var x = 0; x < 8 ; x++) {
+			let randInt = Math.floor(Math.random() * chars.length);
+			output = output + chars[randInt]; 
+		} 
+	}
+
+	return output;
+}
+
+
+
+function setTokens(newData) {
+	tokens = newData;
+}
+
+fetch("nfcards.github.io/assets/routes.json")
+	.then((res) => {
+		if (!res.ok) {
+			throw new Error
+				(`HTTP error! Status: ${res.status}`);
+		}
+		return res.json();
+	})
+	.then(data => setTokens(data))
+	.catch((error) =>
+		console.error("Unable to fetch data:", error));
+
+</script>
+</body>
+</html>
