@@ -23,10 +23,115 @@
 	</button>
 <div class="grid"> 
 </div>
+<div id="cards">
+
+</div>
 <script type="text/javascript" src="QRCodeJs/qrcode.min.js"></script>
 <script type="text/javascript">
 let tokens = [];
 let grid = document.querySelector(".grid");
+const cardSchemes = {
+	'black' : {
+		'altColor' : '#fff',
+		'primaryColor' : '#000'
+	},
+	'red' : {
+		'altColor' : '#6e1817',
+		'primaryColor' : '#942321'
+	},
+	'white' : {
+		'primaryColor' : '#ffffff',
+		'altColor' : '#e0e0e0'
+	},
+	'pink' : {
+		'primaryColor' : '#f9a4cf',
+		'altColor' : '#f565af'
+	},
+	'green' : {
+		'primaryColor' : '#158e5e',
+		'altColor' : '#075939'
+	},
+	'blue' : {
+		'primaryColor' : '#315c80',
+		'altColor' : '#d7d7d7'
+	}
+};
+
+class Card{
+	constructor(colorScheme) {
+		this.colorScheme = colorScheme;
+		this.id = generateToken();
+		this.qr;
+		this.primaryColor;
+		this.altColor;
+		this.template;
+		this.createSVG();
+
+	}
+	//Creates the card template and sets necessary metadata
+	createSVG() {
+		this.template = document.createElement("object");
+		this.template.data = 'cardTemplate.svg';
+		this.template.type = 'image/svg+xml'; 
+		this.template.addEventListener('load', () => {
+
+			this.setColors();
+			this.genQR();
+			this.changeColor();
+		});
+		this.display();
+
+	}
+	setColors() {
+		this.primaryColor = cardSchemes[this.colorScheme]['primaryColor'];
+		this.altColor = cardSchemes[this.colorScheme]['altColor'];
+	}
+	changeColor() {
+		let darkElements = this.template.contentDocument.querySelectorAll('path#rearOfCardFromPopup , rect#qrCodeContainer, path#frontOfCardFromPopup');
+		let lightElements = this.template.contentDocument.querySelectorAll('path#qrCodeBorder, g#logoFromPopup > path')
+		darkElements.forEach((ele, i) => {
+			ele.style.fill = this.primaryColor;
+			ele.style.stroke = this.primaryColor;
+		});
+		lightElements.forEach((ele, i) => {
+			ele.style.fill = this.altColor;
+			ele.style.stroke = this.primaryColor;
+			ele.style.strokeWidth = 0;
+		});
+	}
+	//Employ the QRCode Library to create a QR Code
+	genQR() {
+		var ns = 'http://www.w3.org/2000/svg';
+		let newQR = document.createElementNS(ns, "foreignObject");
+		let qrDiv = document.createElement("div");
+		// Set the positioning of this foreignObject to be the x and y of the only rectangle in the template 
+		qrDiv.style.display = "flex";
+		newQR.setAttribute('x', '33.6758');
+		newQR.setAttribute('y', '17.954342');
+		newQR.setAttribute('width', this.template.contentDocument.querySelector("rect#qrCodeContainer").getAttribute('width') - 0.23);
+		newQR.setAttribute('height', this.template.contentDocument.querySelector("rect#qrCodeContainer").getAttribute('height') - 0.25);
+		//Generate a QR code inside the foreignObject
+		new QRCode(qrDiv, {
+			text : `https://nfcards.github.io/index.html?token=${this.id}`, 
+			width : 100,
+			height : 100,
+			colorDark : this.altColor,
+			colorLight : this.primaryColor
+		});
+		qrDiv.querySelector("img").style.overflow = "auto";
+		newQR.appendChild(qrDiv);
+		//Append newQR to the g element
+		this.template.contentDocument.querySelector("svg").appendChild(newQR);
+	}
+
+	display() {
+		let cardsDiv = document.querySelector("#cards");
+			
+		//Append this template to div#cards
+		console.log(this.template);
+		cardsDiv.appendChild(this.template);
+	}
+}
 function generatesQrs() {
 	for (var i = 0; i < document.querySelector("#qty").value; i++) {  
 		let newQr = document.createElement("div");
@@ -67,7 +172,8 @@ function setTokens(newData) {
 	tokens = newData;
 }
 
-fetch("nfcards.github.io/assets/routes.json")
+
+fetch("routes.json")
 	.then((res) => {
 		if (!res.ok) {
 			throw new Error
