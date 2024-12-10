@@ -14,13 +14,28 @@
 	}
 	.qr img {
 		width:6em;
-		height:6m;
+		height:6em;
+	}
+	.chooseColor {
+		width:3em;
+		height:2em
 	}
 </style>
 </head>
 <body>
 	<input type="number" id="qty"><button onclick="generatesQrs()">Generate QRs
 	</button>
+
+	<div class="selection">
+		<button class="chooseColor" onclick="createCard(this.name)" name="red">
+		
+	</button>
+	<button class="chooseColor" onclick="createCard(this.name)" name="black"></button>
+	<button class="chooseColor" onclick="createCard(this.name)" name="blue"></button>
+	<button class="chooseColor" onclick="createCard(this.name)" name="pink"></button>
+	<button class="chooseColor" onclick="createCard(this.name)" name="white"></button>
+	<button class="chooseColor" onclick="createCard(this.name)" name="green"></button> 
+</div>
 <div class="grid"> 
 </div>
 <div id="cards">
@@ -109,7 +124,7 @@ class Card{
 		newQR.setAttribute('x', '33.6758');
 		newQR.setAttribute('y', '17.954342');
 		newQR.setAttribute('width', this.template.contentDocument.querySelector("rect#qrCodeContainer").getAttribute('width') - 0.23);
-		newQR.setAttribute('height', this.template.contentDocument.querySelector("rect#qrCodeContainer").getAttribute('height') - 0.25);
+		newQR.setAttribute('height', this.template.contentDocument.querySelector("rect#qrCodeContainer").getAttribute('height') - 0.25 -0.78);
 		//Generate a QR code inside the foreignObject
 		new QRCode(qrDiv, {
 			text : `https://nfcards.github.io/index.html?token=${this.id}`, 
@@ -129,7 +144,7 @@ class Card{
 			
 		//Append this template to div#cards
 		console.log(this.template);
-		cardsDiv.appendChild(this.template);
+		cardsDiv.prepend(this.template);
 	}
 }
 function generatesQrs() {
@@ -166,7 +181,10 @@ function generateToken() {
 	return output;
 }
 
+function createCard(color) {
+	return cardSchemes.hasOwnProperty(color) && new Card(color);
 
+}
 
 function setTokens(newData) {
 	tokens = newData;
@@ -185,6 +203,10 @@ fetch("routes.json")
 	.catch((error) =>
 		console.error("Unable to fetch data:", error));
 
+document.querySelectorAll("button.chooseColor").forEach((btn) => {
+	console.log(btn.name);
+	btn.style.backgroundColor = cardSchemes[btn.name].primaryColor;
+} );
 </script>
 </body>
 </html>
