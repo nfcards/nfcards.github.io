@@ -13,20 +13,25 @@
 		padding:1rem;
 	}
 	.qr img {
-		width:6em;
-		height:6em;
+		width:5.9em;
+		height:5.9em;
 	}
 	.chooseColor {
 		width:3em;
 		height:2em
 	}
+	@media print {
+		.hidePrint {
+			display:none;
+		}
+	}
 </style>
 </head>
 <body>
-	<input type="number" id="qty"><button onclick="generatesQrs()">Generate QRs
-	</button>
 
-	<div class="selection">
+	<div class="selection hidePrint">
+		<input type="number" id="qty"><button onclick="generatesQrs()">Generate QRs
+		</button>
 		<button class="chooseColor" onclick="createCard(this.name)" name="red">
 		
 	</button>
@@ -51,7 +56,7 @@ const cardSchemes = {
 		'primaryColor' : '#000'
 	},
 	'red' : {
-		'altColor' : '#6e1817',
+		'altColor' : '#6c1615',
 		'primaryColor' : '#942321'
 	},
 	'white' : {
@@ -121,15 +126,15 @@ class Card{
 		let qrDiv = document.createElement("div");
 		// Set the positioning of this foreignObject to be the x and y of the only rectangle in the template 
 		qrDiv.style.display = "flex";
-		newQR.setAttribute('x', '33.6758');
-		newQR.setAttribute('y', '17.954342');
-		newQR.setAttribute('width', this.template.contentDocument.querySelector("rect#qrCodeContainer").getAttribute('width') - 0.23);
-		newQR.setAttribute('height', this.template.contentDocument.querySelector("rect#qrCodeContainer").getAttribute('height') - 0.25 -0.78);
+		newQR.setAttribute('x', '33.95');
+		newQR.setAttribute('y', '17.64');
+		newQR.setAttribute('width', this.template.contentDocument.querySelector("rect#qrCodeContainer").getAttribute('width') );
+		newQR.setAttribute('height', this.template.contentDocument.querySelector("rect#qrCodeContainer").getAttribute('height'));
 		//Generate a QR code inside the foreignObject
 		new QRCode(qrDiv, {
 			text : `https://nfcards.github.io/index.html?token=${this.id}`, 
-			width : 100,
-			height : 100,
+			width : 99,
+			height : 98.9,
 			colorDark : this.altColor,
 			colorLight : this.primaryColor
 		});
