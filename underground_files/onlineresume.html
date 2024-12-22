@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<style>
+		#overlay {
+    width: 100%;
+    /* min-height: 50vh; */
+    height: 60vh;
+    /* position: fixed; */
+    background-color: rgb(239 239 239);
+    display: none;
+    justify-content: center;
+    align-items: center;  
+    overflow-y: auto;
+    pointer-events: all; 
+    border-radius: 1em 1em 0em 0em;
+}
+		.section { 
+			background-color: white;
+			overflow-y:auto; 
+			height:90%;
+
+		}
+		.section p{
+			font-size: 2.2vw;
+			padding: 1em 3em;
+		}
+		#resume {
+			background-color: transparent !important;
+			overflow-y: hidden;
+		}
+		#resume iframe{
+			
+			height:100%;
+		}
+
+		#education{
+			text-align: center;
+		}
+		#education .orange-banner{
+			padding:4vh 2vh;
+			background-color: #fa5100;
+			color:white;
+		}
+		#education ul{
+			text-align: left;
+			font-size:2vh;
+		}
+		#education .pad{
+			padding:2em;
+			justify-content: center;
+			border:2px solid #fa5100;
+		} 
+		#comm_service{
+			width:100%;
+			height:100%;
+			text-align: center;
+		}
+		#comm_service h1{
+			padding:2.5vh .2vw;
+
+		}
+		.container-service { 
+			display: flex;
+			flex-wrap: wrap;
+			margin: 2em auto;
+			padding:0em 3em 3em 3em;
+			align-items: center;
+			justify-content: center;
+			
+		}
+		.big-img{
+			flex:1; 
+			align-self: flex-start;
+			max-width: 60%;
+		}
+		@media (width <= 1000px) {
+				.smaller-imgs {
+					flex-direction: row;
+				}
+			}
+		.smaller-imgs{
+			display: flex;
+			flex:1;
+			flex-direction: column;
+			width:max-content;
+			justify-content: center;	
+			align-items:center;		
+		}
+		#projects{
+			background-color: transparent; 
+			height:100%;
+			text-align: center;
+
+		}
+		#projects .project{
+			background-color:white;
+			margin:3em 0.2em; 
+			border-radius:0.3em;
+			/*border: 1px solid black;
+			box-shadow:5px 5px black;*/
+		}
+		#projects .project p{
+			font-size:2vh;
+			padding:1em 1.8em;
+		}
+		.bkg-img{ 
+					height: 50vh;
+			background:url('https://www.admissions.illinois.edu/content/images/visit-virtual-visits.jpg');
+			background-size:100% 100%;
+			background-repeat: no-repeat;
+		}
+		.avatar-bkg {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: url('https://i.ibb.co/tDj9NNy/UI-240201-MH-039.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 2px 2px 2px black;
+}
+
+		.nametag {
+
+			width:100%;
+			padding:1em 0em;
+			background-color: #060a0d;
+			color:white;
+			display:flex;
+			justify-content: center;
+			align-items:center;
+
+		}
+		.summary{
+			padding: 4em 0em;
+			text-align: center
+		}
+		.summary h2{
+
+		}
+		.summary p{
+			font-size:20px / 30px verdana;
+			text-align: justify;
+			padding: 2rem 8vw 0em ; 
+			text-align: center;
+		}
+		
+		.skills{
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+		.skills img{
+			width:3.5em;
+			height: 3.5em;
+			margin:1em;
+			padding: 0.5em;
+			background-color: white;
+			border:1px inset black;
+			border-radius:1em;
+		}
+		.btns{ 
+			padding:3em;
+			display:inline-flex;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+		.btns button{
+			margin:1.5em;
+			border-radius:1em;
+			border:none; 
+			width: 25vw;
+			text-align: center;
+		}
+		.btns button svg{ 
+			width:6rem;
+			margin:2em 0em 0em;
+		}
+		.btns button h4{
+			padding:0.6em;
+			text-align: center;
+		}
+
+		
+		footer{
+			background-color: black;
+		}
+		footer .quote{
+			padding:3em;
+			text-align: center;
+			background-color: black;
+			color:white;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+		.quote b{
+			display: block;
+			padding:.6em;
+		}
+		.socials{
+			text-align: center;
+			padding:2em 0em 3em;
+			background-color: black;
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		} 
+		.socials a{
+			margin:1em;
+			padding:1em;
+			border:1px solid red;
+			border-radius:2em;
+		}
+		.small-img{
+			width:50%;
+		}
+		.container-projects{
+			align-items: flex-start;
+			display: flex;
+			flex-wrap: wrap; 
+			margin: auto;
+		}
+		.container-projects img{
+			padding:1em;
+			flex: 1; 
+
+		}
+		header , .UserPage_footer__wOeFd{
+			display: none;
+		}
+		.HtmlWidget_container__xuiwx , .UserPage_wrapper__UgtmB{
+			padding:0;
+		}
+		.fixed{
+			width:100vw; 
+			position:fixed;
+			bottom:0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction:column;
+			background: transparent;
+
+		}
+		.navigation {
+    flex-direction: column;
+    width: 10rem;
+    display: flex;
+    /* align-items: baseline; */
+    justify-content: left;
+    /* flex-wrap: nowrap; */
+    align-content: flex-end;
+
+}
+		.navigation button{
+			mmax-width:4em;
+			padding:1.2em;
+			border:none;
+		}
+		#hideme{
+			display:none;
+
+		}
+	</style>
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+</head>
+<body>
+	
+	<div class="avatar-bkg">
+		<div class="navigation">
+			<button onclick="show_me(this.name)" name="comm_service">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+					<path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/>
+				</svg>
+			</button>
+			<button onclick="show_me(this.name)" name="education">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-mortarboard" viewBox="0 0 16 16">
+					<path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917zM8 8.46 1.758 5.965 8 3.052l6.242 2.913z"/>
+					<path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466zm-.068 1.873.22-.748 3.496 1.311a.5.5 0 0 0 .352 0l3.496-1.311.22.748L8 12.46z"/>
+				</svg>
+			</button>
+			<button onclick="show_me(this.name)" name="resume">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-file-earmark-person-fill" viewBox="0 0 16 16">
+					<path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0m2 5.755V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-.245S4 12 8 12s5 1.755 5 1.755"/>
+				</svg>
+			</button>
+			<button onclick="show_me(this.name)" name="projects">
+				<svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-collection-fill" viewBox="0 0 16 16">
+					<path d="M0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6zM2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3m2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1"/>
+				</svg>
+			</button>
+			<button onclick="show_me(this.name)" name="abilities">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16">
+					<path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
+				</svg>
+			</button>
+			<button onclick="show_me(this.name)" name="testimonies">
+				<svg xmlns="http://www.w3.org/2000/svg"fill="currentColor" class="bi bi-quote" viewBox="0 0 16 16">
+					<path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388q0-.527.062-1.054.093-.558.31-.992t.559-.683q.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 9 7.558V11a1 1 0 0 0 1 1zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612q0-.527.062-1.054.094-.558.31-.992.217-.434.559-.683.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 3 7.558V11a1 1 0 0 0 1 1z"/>
+				</svg>
+			</button>
+		</div>
+	</div>
+	
+		<div class="nametag">
+		<h1>Tyrese Cook</h1>
+	</div>
+	<div class="summary">
+		<h3>Professional Summary</h3>
+		<p>I have a passion for exploring the technical aspect of socio-technical systems and its interrelation with the people and society. I have 5+ years of programming experience with using PHP & SQL to enable clients to manage relational database management systems, 3 years of programming experience with Python, and 5 years of development with frontend programming languages.</p>
+	</div>
+	<div class="skills">
+		<img src="https://cdn.iconscout.com/icon/free/png-256/free-python-3521655-2945099.png?f=webp"/>
+		<img src="https://cdn-icons-png.flaticon.com/512/5815/5815886.png"/>
+		<img src="https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/css/css.png"/>
+		<img src="https://static-00.iconduck.com/assets.00/html-icon-1451x2048-69sehqrp.png"/>
+		<img src="https://www.freepnglogos.com/uploads/javascript-png/javascript-logo-transparent-logo-javascript-images-3.png"/>	
+		<img src="https://static-00.iconduck.com/assets.00/ms-excel-icon-2048x2026-nws24wyy.png"/>
+		<img src="https://cdn-icons-png.flaticon.com/512/518/518713.png"/>
+
+
+	</div>
+
+	<!--  -->
+	<div class="btns center col-12">
+		
+		
+	</div>
+
+	<footer id="hideme">
+		<h2 class="quote">
+			"We don't meet people by accident. They're meant to cross our path for a reason" <b> - Kathryn Perez</b>
+		</h2>
+		<div class="socials">
+			<a href="https://www.linkedin.com/in/tyrese-c-a90562125/" target="_blank">
+				<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+				  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+				</svg>
+			</a>
+			<a href="mailto:tyresec2@illinois.edu">
+				<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+  <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+</svg>
+			</a>
+			<a href="tel:7736909776">
+				<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+</svg>
+			</a>
+		</div>
+	</footer>
+	<footer class="fixed col-12">
+		<div id="overlay">
+		<div id="resume" class="section">
+			<iframe src="https://drive.google.com/file/d/1QKhCpDOdkEPuReGEhHltLLW3JfEcGawA/preview" width="720" height="1080" class="col-12" allow="autoplay"></iframe>
+		</div>
+		<div id="testimonies" class="section">
+			Testimonies
+		</div>
+		<div id="education" class="section ">
+			<div class="bkg-img">
+				<img src=""/>
+			</div>
+			<div class="orange-banner">
+				<h3>University of Illinois at Urbana-Champaign</h3>
+				
+				<h6>Aug 2021 - Present</h6>
+				<h6>Class of '25</h6>
+			</div>
+			<div class="d-flex flex-wrap pad">
+				<div>
+					<h5><b>Major: </b>Information Sciences</h5>
+					<h5>Relevant Coursework</h5>
+					<ul>
+						<li>Programming for Information Problems</li>
+						<li>Web Content Strategy & Management, Intro to
+		Computer Science</li>
+						<li>Intro to
+		Computer Science</li>
+		<li>Consulting for Information Professionals</li>
+		<li>Introduction to Database Concepts and
+		Applications</li>
+					</ul>
+				</div>
+				
+			</div>
+		</div>
+		<div id="projects" class="section">
+			<div class="project">
+				<h2></h2>
+				<p>Designed a web-based application that automated 12 steps in my business. (used Nginx, JQuery, HTML & CSS (Nov 2023))</p>
+				<div class="container-projects col-md-10">
+					<img src="https://i.postimg.cc/3wXsM7jF/Screenshot-from-2024-03-29-22-47-16.png" class="col-3">
+					<img src="https://i.postimg.cc/QMG2nV7M/Screenshot-from-2024-03-29-22-50-34.png" class="col-3">
+				</div>
+			</div>
+			<div class="project">
+				<h2></h2>
+				<p>Launched a local server that serves a web application to solve my father’s audio to USB issue using Python (Django), JQuery, HTML & CSS (Dec 2023)</p>
+				<div class="container-projects col-md-10">
+					<img src="https://i.postimg.cc/Yq9cVJyJ/Screenshot-from-2024-03-29-23-10-25.png" class="d-flex-2 col-3">
+					<img src="https://i.postimg.cc/rpW2jxYs/Screenshot-from-2024-03-29-23-11-31.png" class="col-3">
+					<img src="https://i.postimg.cc/1tGPmwp2/Screenshot-from-2024-03-29-23-12-38.png" class="col-3">
+					<img src="https://i.postimg.cc/prkH8vcB/Screenshot-from-2024-03-29-23-12-48.png" class="col-3">
+					<img src="https://i.postimg.cc/zvqNVv7B/Screenshot-from-2024-03-29-23-13-02.png" class="col-3">
+					<div class="vstack stack-1 col-12">
+						<img src="https://i.postimg.cc/FFxmwbFJ/Screenshot-from-2024-03-29-23-14-13.png" class="">
+						<img src="https://i.postimg.cc/GpsdfZ9c/Screenshot-from-2024-03-29-23-14-37.png" class="">
+					</div>
+					<img src="https://i.postimg.cc/8kLBG5xv/Screenshot-from-2024-03-29-23-29-03.png" class="col-3">
+
+				</div>
+			</div>
+			<!-- <div class="project">
+				<h2></h2>
+				<p>Developed a command line program that automatically appends assignment due dates from
+			Canvas to your personal Google Calendar using Python and Javascript (Jan 2024)</p>
+				<div class="container-projects col-md-10"> 
+					<img src="https://cdn-icons-png.flaticon.com/512/5815/5815886.png" class="col-3">
+					<img src="https://i.postimg.cc/RV3Dz0pc/Screenshot-from-2024-03-28-21-37-22.png" class="col-3">
+					<img src="https://i.postimg.cc/RV3Dz0pc/Screenshot-from-2024-03-28-21-37-22.png" class="col-3">
+					<img src="https://cdn-icons-png.flaticon.com/512/5815/5815886.png" class="col-3">
+					<img src="https://i.postimg.cc/RV3Dz0pc/Screenshot-from-2024-03-28-21-37-22.png" class="col-3">
+
+				</div>
+			</div> -->
+		</div>
+		<div id="comm_service" class="section">
+			<h1><a href="https://hipolink.me/bbuiuc">BBUIUC</a></h1>
+				<p> My peers at the University of Illinois could not tell me where to find the nearest Black barber. To combat this issue, <b>I've created a website that keeps a tab on every Black-owned business at UIUC</b>. Using Google Forms, my peers and I have compiled information on 40 Black businesses and counting.</p>
+			<div class="container-service">
+				
+				<img src="https://i.postimg.cc/nhBSCPJr/Screenshot-from-2024-03-28-21-34-37.png" class="big-img">
+				<div class="smaller-imgs">
+					<img src="https://i.postimg.cc/3JPbrHzz/Screenshot-from-2024-03-28-21-37-07.png" class="small-img">
+					<img src="https://i.postimg.cc/RV3Dz0pc/Screenshot-from-2024-03-28-21-37-22.png" class="small-img">
+				</div>
+
+			</div>
+			<h1> B.E.T (Black Engineers of Tomorrow) </h1>
+
+			<p><b>I've initiated this organization to give the kids from low-income neighborhoods something productive to do</b>. I teach these kids how to use design-oriented software, and use the machines at makerspaces. (e.g, 3D Printers, Laser Cutters, Sewing Machines, Poster Printers, Cameo Cutters) </p>
+			<div class="container-service">
+				<img src="https://i.postimg.cc/9Frhq0sN/bet.png" class="big-img"/>
+			</div>
+		</div>
+		<div id="abilities" class="section">
+			Abilities
+		</div>
+	</div>
+		
+	</footer>
+	
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+	<script type="text/javascript">
+
+		var nav_btns = $(".btns button");
+		
+
+		function set_section_bkg(section){
+			/*if (section == "resume") {
+				$("#overlay").css("background","rgb(35 46 77 / 80%)");
+			}
+			else if (section == "education") {
+				$("#overlay").css("background","rgb(145 41 19 / 50%)");
+			}
+			else {
+				$("#overlay").css("background","rgb(0 0 0 / 50%)");
+			}*/
+		}
+		// Hides all sections in overlay
+		function hide_elems(){
+			var elems = $("#overlay").children();
+			for (var ele = 0; ele < elems.length; ele++) {
+				
+				$(elems[ele]).hide();
+			}
+
+		}
+		// Displays section that corresponds to clicked button 
+		function show_me(section){
+			var section_id = "#" + section;
+
+			hide_elems();
+			set_section_bkg(section);
+			$(section_id).fadeIn();
+			$("#overlay").fadeIn(600,()=>{
+				$("#overlay").css("display","flex");
+			});
+		}
+		
+
+		//Hides overlay onclick
+
+		$("#overlay").on('click',()=>{
+			$("#overlay").fadeOut(600);
+
+		});
+
+	</script>
+  </body> 
+</html>

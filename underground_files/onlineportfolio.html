@@ -1,0 +1,330 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<style type="text/css">
+	
+:root {
+	--nav-height:9vh;
+	--main-blue: #2888ef;
+}
+header.Header_containerMultilink__aFYsq {
+	display:none;
+}
+.UserPage_content__ENXBa , .UserPage_wrapper__UgtmB,  .HtmlWidget_container__xuiwx {
+	padding:0 !important;
+}
+
+#nav {
+	height:var(--nav-height);
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: white;
+	z-index: 10;
+	padding:1rem;
+}
+#nav h1 {
+	font-weight: 600;
+	text-align: left;
+	padding: 0 2rem 0 1rem;
+	color:var(--main-blue);
+}
+#btns button {
+	scroll-snap-align: start;
+	border:none;
+	background-color:transparent;
+	margin:1rem 0.5rem;
+	text-wrap:nowrap;
+	color:#5d6979;
+	font-weight: 200;
+	padding: 0.8rem 1rem;
+	opacity: 0.64;
+}
+#btns button:focus { 
+	border:none;
+	border-bottom:4px solid #2888efff;  
+	opacity: 1;
+}
+#sections {
+	margin-top: var(--nav-height);
+}
+/*Show only the first section at load*/
+#sections >div:not(:first-child){
+	display:none;
+}
+
+.wide {
+	width:100%;
+}
+.j-center {
+	justify-content: center;
+}
+.v-center {
+	align-items: center;
+}
+.j-start {
+	justify-content: flex-start;
+}
+/*Smallest text on the webpage */
+.small-text {
+	font-size: 0.2rem,;
+}
+/*Text align right*/
+.t-right{
+	text-align: right;
+}
+.t-left{
+	text-align: left;
+}
+.h-auto{
+	height:auto;
+}
+.h-fill {
+	height: 100%;
+}
+.carousel {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-snap-stop: always;
+    scroll-behavior: smooth;
+    scrollbar-gutter: stable; 
+}
+#btns.carousel::-webkit-scrollbar {
+display: none;
+}
+.nowrap {
+	text-wrap:nowrap;
+}
+.nomarge {
+	margin: 0 !important;
+}
+.project {
+    min-width: 96% !important;
+    max-width:500px;
+    scroll-snap-align: center;
+    padding: 1rem;
+    margin: 0 3rem;
+    text-align: left;
+    scroll-snap-stop: always;
+}
+.flex-row {
+    display: flex;
+    flex-flow: row nowrap;
+}
+.project .info .logo img{
+	background-color:#2888efff;
+
+}
+.project .info >div:first-child{
+	flex:1;
+	padding:1rem;
+}
+.project .info >div:last-child{
+	flex:3;
+}
+
+.pad {
+	padding:1rem 2rem;
+}
+</style>
+<div id="nav" class="wide flex-row v-center"> 
+		<h1 class="header nomarge nowrap">Tyrese Cook</h1>  
+		<div id="btns" class="flex-row carousel j-start">
+			<button onclick='show(this.name)' name='summary'>Summary</button>
+			<button onclick='show(this.name)' name='projects'>Projects</button>
+			<button onclick='show(this.name)' name='education'>Education</button>
+			<button onclick='show(this.name)' name='resume'>Resume</button>
+			<button onclick='show(this.name)' name='work'>Work Experience</button>
+			<button onclick='show(this.name)' name='community-service'>Community Service</button> 
+		</div>
+
+</div>
+<div id='sections'>
+	<div id='summary'>
+		<p class ='category-head'>Professional Summary</p>
+		<p class="casual-text">
+			I have a passion for exploring the technical aspect of socio-technical systems and its interrelation with the people and society. I have 6+ years of programming experience with using PHP & SQL to enable clients to manage relational database management systems, 5 years of programming experience with Python, and 9 years of development with frontend programming languages. 
+		</p>
+		<p class='category-head'> Abilities</p>
+		<ul class='casual-text'>
+			<li>Can automate tasks using Python</li>
+			<li>Can integrate web applications with back-end technologies</li>
+			<li>Can understand and implement new methods within a given programming language's documentation</li>
+			<li>Able to develop reusable and testable code</li>
+		</ul>
+		<p class='category-head'>Core Strengths</p>
+		<ul class='j-center flex-row'>
+			<div class="flex-col t-right">
+				<li>Relational Databases</li>
+				<li>Backend Web Development</li>
+				<li>Adaptable</li>
+			</div>
+			<div class="flex-col t-left">
+				<li>Creative Problem Solving</li>
+				<li>Teamwork</li>
+				<li>Information Gathering & Research</li>
+			</div>
+		</ul>
+		<div id='contact'>
+			<i class='bi bi-envelope'></i>
+			<i class='bi bi-telephone'></i>
+			<i class='bi bi-linkedin'></i> 
+
+		</div> 
+	</div> 
+	<div id='projects'>
+
+		<div class='carousel flex-row'>
+			<div class="project">
+				<div class="info j-center flex-row">
+					<div class="logo">
+						<img src="" class="wide h-fill">
+					</div>
+					<div>
+						<h2>Split-Screen Movelist</h2>
+						<h4>Python (Django) | Javascript | HTML | CSS </h4>
+						<h4>January 2024</h4>
+					</div>
+				</div>
+				<div class="images">
+					<img src="">
+					<img src="">
+					<img src="">
+				</div>
+				<div class="description">
+					<p class='casual-text'>
+						Ever played a retro fighter game? There weren't any movelists in sight, and if there was, you'd only see one per player. With this local website, I am now able to see the movelists for 3 characters on one device.
+					</p>
+				</div>
+			</div>
+			<div class="project">
+				<div class="info j-center flex-row">
+					<div class="logo">
+						<img src="" class="wide h-fill">
+					</div>
+					<div>
+						<h2>BBUIUC</h2>
+						<h4>Javascript | HTML | CSS | Spreadsheets</h4>
+						<h4>February 2024 - Ongoing</h4>
+					</div>
+				</div>
+				<div class="images">
+					<img src="">
+					<img src="">
+					<img src="">
+				</div>
+				<div class="description">
+					<p class='casual-text'>
+						What do you do when you can't find businesses that cater to your needs on campus? You build a website that collects and displays the information of said businesses, share a QR code to the website, and network with local leaders to maintain the site's relevance. That's what you do.   
+					</p>
+				</div>
+			</div>
+			<div class="project">
+				<div class="info j-center flex-row">
+					<div class="logo">
+						<img src="" class="wide h-fill">
+					</div>
+					<div>
+						<h2>Youtube -> MP3 Interface</h2>
+						<h4>Python (+Django) | Git | Javascript | HTML | CSS</h4>
+						<h4>May 2024 - June 2024</h4>
+					</div>
+				</div>
+				<div class="images">
+					<img src="">
+					<img src="">
+					<img src="">
+				</div>
+				<div class="description">
+					<p class='casual-text'>
+						What do you do when your father asks you to add 200+ songs to his USB (for work) every other quarter? You make him an exlusive web application that search/retrieves Youtube & Shazaam data and host it on a Raspberry Pi, so that he can do it from his own device. That's what you do. 
+					</p>
+				</div>
+			</div>
+			<div class="project">
+				<div class="info j-center flex-row">
+					<div class="logo">
+						<img src="" class="wide h-fill">
+					</div>
+					<div>
+						<h2>Canvas to Calendar</h2>
+						<h4>Python | Javascript | Git</h4>
+						<h4>December 2023 - January 2024</h4>
+					</div>
+				</div>
+				<div class="images">
+					<img src="">
+					<img src="">
+					<img src="">
+				</div>
+				<div class="description">
+					<p class='casual-text'>
+						Here at the University we use Canvas for coursework. The system works but it doesn't send alerts/notifications on assignment due dates, so I developed a system that exports my Canvas assignments to Google Calendar's .ics file format.
+					</p>
+				</div>
+			</div>
+			<div class="project">
+				<div class="info j-center flex-row">
+					<div class="logo">
+						<img src="" class="wide h-fill">
+					</div>
+					<div>
+						<h2>Automating Digital Card Design</h2>
+						<h4>Python | Javascript | Git</h4>
+						<h4>September 2023</h4>
+					</div>
+				</div>
+				<div class="images">
+					<img src="">
+					<img src="">
+					<img src="">
+				</div>
+				<div class="description">
+					<p class='casual-text'>
+						What happens when a company wants to buy 30 digital cards from you? You DO NOT spend an hour manually designing each card that's for sure. Instead, you build a site that dynamically creates the card designs from a row of input boxes, and automatically prep the designs for printing. 
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id='education'>
+		<div class=''>
+
+		</div>
+		
+		<p class="category-head">
+			Relevant Coursework
+		</p>
+		<div class='carousel flex-row'>
+
+		</div>
+	</div> 
+	<div id='work'>
+
+	</div> 
+	<div id='resume'>
+		<iframe src="https://drive.google.com/file/d/1QKhCpDOdkEPuReGEhHltLLW3JfEcGawA/preview" width="720" height="1080" allow="autoplay"></iframe>
+	</div>
+	<div id='community-service'>
+		
+	</div>
+</div>
+
+<img class='wide h-auto' src='https://i.postimg.cc/L5SnYjTv/buildingblue.png'/>
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+<script type="text/javascript">
+
+function hideSections(){
+	$('#sections >div').hide();
+}
+function show(sect_name) {  
+	hideSections();
+	$('#sections  div[id="' + sect_name + '"]').show();	
+}
+
+document.querySelector('.UserPage_container__mf_wM').style.maxWidth = "100vw";  
+document.querySelector('div#resume iframe').style.width = "100%";  
+
+
+</script>
