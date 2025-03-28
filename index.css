@@ -5,7 +5,72 @@ body {
     padding:0;
 }
 
+.flex.flex-col.popup-btns {
+    width: 80%;
+    margin-top: 11%;
+    max-width: 588px;
+}
+.details {
+    /* text-align: center; */
+    width: 80%;
+    display: none;
+}
+.just-even {
+    justify-content: SPACE-EVENLY;
+}
+.token-container {
+    width: 45%;
+    background: #030616c7;
+    text-align: center;
+    /* border-top: 1px solid #1b3cc8; */
+    /* margin-top: -10%; */
+    font-size: larger;
+}
 
+h3#token {
+    color: #bfc8f1;
+    font-size: larger;
+    font-family:monospace;
+}
+.popup-btns {}
+
+.popup-btns button {
+    /* box-shadow: inset 2px 2px 6px 3px black; */
+    min-height: 80px;
+    /* padding: 1rem; */
+    margin: 4% 0;
+    font-size: 1.7rem;
+    border: none;
+    border-radius: 0.7rem;
+    transition: scale .4s, color .6s, background 4s;
+    transition-timing-function: ease-in-out;
+}
+.popup-btns button:hover {
+    cursor: pointer;
+    scale: 103%;
+    color: white;
+}
+
+button.secondary-btn {
+    background: #070e2c;
+    /* border: 2px outset #636a8b; */
+    color: #3d4773;
+    box-shadow: inset 2px 2px 6px 3px #0b1230;
+}
+
+button.primary-btn {
+    color: #d9dff7;
+    background: linear-gradient(292deg, #1738bf 60%, #324dbc);
+    box-shadow: -2px 4px 6px 0px black;
+    border: 1px inset #2c54ff;
+}
+button.primary-btn:hover {
+    background: linear-gradient(292deg, #2342c0 30%, #0e36d5);
+}
+
+svg#svg1 {
+    
+}
 .monda {
   font-family: "Monda", sans-serif;
   font-optical-sizing: auto;
@@ -220,27 +285,27 @@ div#loading {
 
     
 #loading path[id='rung1'] {
-    animation-duration:1s;
+    animation-duration: 2s;
     animation-name:toWhite;
     animation-timing-function:linear;
     animation-direction:alternate;
-    animation-iteration-count:infinite; 
+    animation-iteration-count:infinite;
 }
 #loading path[id='rung2'] {
-    animation-duration:1s;
+    animation-duration: 2s;
     animation-name:toWhite;
     animation-timing-function:linear;
     animation-direction:alternate;
     animation-iteration-count:infinite;
-    animation-delay:0.23s
+    animation-delay: 0.45s;
 }
 #loading path[id='rung3'] {
-    animation-duration:1s;
+    animation-duration: 2s;
     animation-name:toWhite;
     animation-timing-function:linear;
     animation-direction:alternate;
     animation-iteration-count:infinite;
-    animation-delay:0.5s
+    animation-delay: 1s;
 }
 
     
@@ -248,12 +313,9 @@ div#loading {
    
 @keyframes toWhite{
 
-from {
-fill:black;
-}
+from {fill: #080d26;stroke: #050a1f;}
 
-to {
-fill:white}
+to {fill: #dce2ff;stroke: #bdc2d7;}
 
 }
 div#welcome {
@@ -282,6 +344,8 @@ svg#svg8 {
 .carousel .full-thumbnail:nth-child(1) {
     background: linear-gradient(to bottom right, hsl(191deg 18% 62.52%), #4e8299);
 }
+
+
 @media (min-width : 440px) {
     .full-thumbnail {
         flex: 1;
